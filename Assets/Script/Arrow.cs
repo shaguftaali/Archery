@@ -27,7 +27,6 @@ public class Arrow : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("AAAAAAAAAAA");
         rig.velocity = Vector3.zero;
     }
 

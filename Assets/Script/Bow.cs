@@ -36,6 +36,8 @@ public class Bow : MonoBehaviour
     [SerializeField]
     Transform crosshair;
 
+   
+   
 
     // Start is called before the first frame update
     void Start()
@@ -44,21 +46,23 @@ public class Bow : MonoBehaviour
     }
     void Update()
     {
+       
 
         if (Input.GetMouseButton(0))
         {
             UpdateBowMovement();
 
         }
-        if(Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0))
         {
-            //dummyArrow.SetActive(false);
-            //arrow.Shoot(crosshair.forward, dummyArrow.transform.position, dummyArrow.transform.rotation);
+            
             arrow.Shoot(crosshair.forward, crosshair.position, crosshair.rotation);
+           
 
         }
 
-        Debug.DrawRay(crosshair.position, crosshair.forward * 50, Color.red);
+
+
     }
         // Update is called once per frame
     void UpdateBowMovement()
@@ -73,6 +77,7 @@ public class Bow : MonoBehaviour
         targetRotationY = Mathf.SmoothDamp(targetRotationY, yRotation, ref targetYRotationV, rotationSpeed);
 
         trans.rotation = Quaternion.Euler(targetRotationX, targetRotationY, 0);
+       
     }
 
     
